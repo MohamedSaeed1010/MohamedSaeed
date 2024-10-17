@@ -1,0 +1,68 @@
+#How to approach the project
+1. Filter the data for movies released in the 1990s
+
+2. Find the most frequent movie duration
+
+3. Count the number of short action movies from the 1990s
+
+
+Steps to complete:-
+
+
+1)
+Filter the data for movies released in the 1990s
+You'll want to subset the DataFrame to keep only the movies and then filter the years so that you are working with rows where the release year is between 1990 and 1999.
+
+
+How to subset a DataFrame
+One way to subset a DataFrame is to use square brackets, passing in a condition. For example, if you wanted to subset a music_df DataFrame for rows where the column genre was "pop", you could use the following: 
+music_df[music_df["genre"] == "pop"]
+
+
+
+Filtering by column values
+You can filter by specifying a condition using square brackets. Here is one such example on a music_df DataFrame, filtering for album lengths greater than 120 minutes. 
+new_df = music_df[music_df['album_length'] > 120]
+Do this twice to capture movies that were released in or after 1990 and in or before 1999.
+
+
+
+2)
+Find the most frequent movie duration
+Visualize the data to view the distributions of durations for movies released in the 1990s.
+
+
+Visualizing a distribution
+Use plt.hist() on your desired column to view the distribution of its values.
+Look at the plot to see where the most frequent count falls and save the duration value as duration.
+
+
+
+3)
+Count the number of short action movies from the 1990s
+First, subset the data again to keep only movies with the correct genre. Then, iterate through the data and count the number of movies depending on the condition pf a duration that is less than 90.
+
+
+Subsetting by genre
+Subset a DataFrame is to use square brackets, passing in a condition. For example, if you wanted to subset a music_df DataFrame for rows where the column genre was "pop", you could use the following: 
+music_df[music_df["genre"] == "pop"]
+
+
+
+Setting up a counter
+You'll first need to set up the counter, short_movie_count as a variable with the value 0.
+This should be outside a for loop if you are making one.
+
+
+
+Iterating through a DataFrame
+Use a for loop with the .iterrows() method to iterate through the DataFrame's labels and rows. This might look like: 
+for label, row in music_df.iterrows():
+
+
+
+Counting a condition
+Use an if/else statement to check if the duration is less than 90, if it is, and 1 to short_movie_count, if it isn't, do nothing.
+You can place this statement within a for loop to do it more than once.
+
+
